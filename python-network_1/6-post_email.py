@@ -12,5 +12,5 @@ if __name__ == "__main__":
     res = sys.argv[1]
     email = {'email': sys.argv[2]}
 
-    req = requests.post(res, data={'email': email})
+    req = requests.post(res, data={res, email})
     print(req.text)
