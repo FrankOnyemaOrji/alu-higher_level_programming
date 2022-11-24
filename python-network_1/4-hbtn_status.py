@@ -2,7 +2,6 @@
 """Python script that fetches data"""
 import requests
 
-
 if __name__ == "__main__":
     res = requests.get("https://intranet.hbtn.io/status")
     print("Body response:")
