@@ -23,7 +23,7 @@ class Base:
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
-    
+  
     @classmethod
     def save_to_file(cls, list_objs):
         """Write the JSON string representation of list_objs to a file"""
@@ -40,7 +40,7 @@ class Base:
         if json_string is None or len(json_string) == 0:
             return []
         return json.loads(json_string)
-    
+
     @classmethod
     def create(cls, **dictionary):
         """Return an instance with all attributes already set"""
@@ -50,7 +50,7 @@ class Base:
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
-    
+
     @classmethod
     def load_from_file(cls):
         """Return a list of instances"""
@@ -77,7 +77,7 @@ class Base:
                 writer.writeheader()
                 for obj in list_objs:
                     writer.writerow(obj.to_dictionary())
-                
+          
     @classmethod
     def load_from_file_csv(cls):
         """Deserialize a CSV file to a list of instances"""
@@ -92,7 +92,7 @@ class Base:
                 return [cls.create(**obj) for obj in reader]
         except:
             return []
-        
+
     @staticmethod
     def draw(list_rectangles, list_squares):
         """Draw rectangles and squares"""
@@ -113,7 +113,6 @@ class Base:
                 t.forward(rect.height)
                 t.left(90)
             t.hideturtle()
-        
 
         t.color('#b5e3d8')
         for square in list_squares:
