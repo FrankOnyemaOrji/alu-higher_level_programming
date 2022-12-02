@@ -83,11 +83,12 @@ class Rectangle(Base):
     def __str__(self):
         """Return the informal string representation of the rectangle"""
         a = self.id
-        b = self.width
-        c = self.height
-        d = self.x
-        e = self.y
-        return "[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}".format(a, b, c, d, e)
+        b = self.__x
+        c = self.__y
+        d = self.__width
+        e = self.__height
+        return ("[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}".
+                format(a, b, c, d, e))
 
     def update(self, *args, **kwargs):
         """Update the attributes of the rectangle"""
