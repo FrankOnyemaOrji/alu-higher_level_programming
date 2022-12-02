@@ -58,7 +58,8 @@ class Base:
         r = cls.__name__ + ".json"
         try:
             with open(r, "r") as f:
-                return [cls.create(**obj) for obj in cls.from_json_string(f.read())]
+                e = (cls.create(**d) for d in cls.from_json_string(f.read()))
+                return [e]
         except:
             return []
 
@@ -77,7 +78,8 @@ class Base:
                 writer = csv.DictWriter(f, fieldnames=fieldnames)
                 writer.writeheader()
                 for obj in list_objs:
-                    writer.writerow(obj.to_dictionary())         
+                    writer.writerow(obj.to_dictionary())
+      
     @classmethod
     def load_from_file_csv(cls):
         """Deserialize a CSV file to a list of instances"""
@@ -124,5 +126,5 @@ class Base:
                 t.forward(square.size)
                 t.left(90)
             t.hideturtle()
-    
+
         t.exitonclick()
