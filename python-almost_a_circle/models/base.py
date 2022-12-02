@@ -79,7 +79,7 @@ class Base:
                 writer.writeheader()
                 for obj in list_objs:
                     writer.writerow(obj.to_dictionary())
-  
+
     @classmethod
     def load_from_file_csv(cls):
         """Deserialize a CSV file to a list of instances"""
