@@ -23,7 +23,7 @@ class Base:
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
-  
+
     @classmethod
     def save_to_file(cls, list_objs):
         """Write the JSON string representation of list_objs to a file"""
@@ -32,7 +32,8 @@ class Base:
             if list_objs is None:
                 f.write("[]")
             else:
-                f.write(cls.to_json_string([obj.to_dictionary() for obj in list_objs]))
+                r = [obj.to_dictionary() for obj in list_objs]
+                f.write(cls.to_json_string(r))
 
     @staticmethod
     def from_json_string(json_string):
@@ -54,9 +55,9 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """Return a list of instances"""
-        filename = cls.__name__ + ".json"
+        r = cls.__name__ + ".json"
         try:
-            with open(filename, "r") as f:
+            with open(r, "r") as f:
                 return [cls.create(**obj) for obj in cls.from_json_string(f.read())]
         except:
             return []
@@ -76,8 +77,7 @@ class Base:
                 writer = csv.DictWriter(f, fieldnames=fieldnames)
                 writer.writeheader()
                 for obj in list_objs:
-                    writer.writerow(obj.to_dictionary())
-          
+                    writer.writerow(obj.to_dictionary())         
     @classmethod
     def load_from_file_csv(cls):
         """Deserialize a CSV file to a list of instances"""
@@ -124,5 +124,5 @@ class Base:
                 t.forward(square.size)
                 t.left(90)
             t.hideturtle()
-        
+    
         t.exitonclick()
