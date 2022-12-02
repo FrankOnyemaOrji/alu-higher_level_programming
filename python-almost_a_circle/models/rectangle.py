@@ -74,10 +74,10 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
-        """Print the rectangle with the character #"""
-        print("\n" * self.y, end="")
+        """ graphic representation """
+        print('\n' * self.__y, end='')
         for i in range(self.__height):
-           print(' ' * self.__x + '#' * self.__width)
+            print(' ' * self.__x + '#' * self.__width)
 
     def __str__(self):
         """Return the informal string representation of the rectangle"""
@@ -97,7 +97,12 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-        
+ 
     def to_dictionary(self):
-        """Return the dictionary representation of a Rectangle"""
-        return {"id": self.id, "width": self.width, "height": self.height, "x": self.x, "y": self.y}
+        dict = {}
+        dict["id"] = self.id
+        dict["width"] = self.width
+        dict["height"] = self.height
+        dict["x"] = self.x
+        dict["y"] = self.y
+        return (dict)
