@@ -5,6 +5,7 @@ from models.base import Base
 
 class Rectangle(Base):
     """Represent a rectangle"""
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initialize a new Rectangle"""
         super().__init__(id)
@@ -15,7 +16,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Get/set the width of the rectangle"""
+        """getter for width"""
         return self.__width
 
     @width.setter
@@ -78,7 +79,7 @@ class Rectangle(Base):
         print('\n' * self.__y, end='')
         for i in range(self.__height):
             print(' ' * self.__x + '#' * self.__width)
-
+       
     def __str__(self):
         """Return the informal string representation of the rectangle"""
         a = self.id
