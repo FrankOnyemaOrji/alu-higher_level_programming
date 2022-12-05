@@ -73,6 +73,6 @@ class Base:
 
         list_dicts = cls.from_json_string(content)
         list_instances = []
-        for dictionary in list_dicts:
-            list_instances.append(cls.create(**dictionary))
+        for dict_instance in list_dicts:
+            list_instances.append(cls.create(**dict_instance))
         return list_instances
