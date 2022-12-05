@@ -76,15 +76,15 @@ class Rectangle(Base):
 
     def display(self):
         """Print the rectangle with the character #"""
-        for i in range(self.__y):
+        for i in range(self.y):
             print()
-        for i in range(self.__height):
-            print(" " * self.__x, '#' * self.width)
+        for i in range(self.height):
+            print(" " * self.x, + '#' * self.width)
 
     def __str__(self):
         """Return a string representation of the rectangle"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, self.__x, self.__y, self.__width, self.__height)
+            self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args, **kwargs):
         """Update the attributes of the rectangle"""
