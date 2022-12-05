@@ -179,26 +179,27 @@ class TestRectangle(unittest.TestCase):
         """Test for save_to_file"""
         Base._Base__nb_objects = 0
 
-        r1 = Rectangle(None)
+        Rectangle.save_to_file(None)
         self.assertTrue(os.path.isfile("Rectangle.json"))
-        with open("Rectangle.json", "r") as f:
+        with open("Rectangle.json") as f:
             self.assertEqual(f.read(), "[]")
 
         Rectangle.save_to_file([])
-        with open("Rectangle.json", "r") as f:
+        with open("Rectangle.json") as f:
             self.assertEqual(f.read(), "[]")
             self.assertEqual(type(f.read()), str)
 
-        Rectangle.save_to_file([1, 2])
-        with open("Rectangle.json", "r") as f:
-            self.assertEqual(f.read(),
-            '[{"x": 0, "y": 0, "id": 1, "height": 1, "width": 1},]')
+        Rectangle.save_to_file([Rectangle(1, 2)])
+        with open("Rectangle.json") as file:
+            self.assertEqual(file.read(),
+                             '[{"id": 1, "width": 1, '
+                             '"height": 2, "x": 0, "y": 0}]')
 
     def test_save_file_empty(self):
         """Test for save_to_file with empty list"""
         Rectangle.save_to_file([])
         self.assertTrue(os.path.isfile("Rectangle.json"))
-        with open("Rectangle.json", "r") as f:
+        with open("Rectangle.json") as f:
             self.assertEqual(f.read(), "[]")
             self.assertEqual(type(f.read()), str)
 

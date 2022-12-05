@@ -147,17 +147,17 @@ class TestSquare(unittest.TestCase):
 
         Square.save_to_file(None)
         self.assertTrue(os.path.exists("Square.json"))
-        with open("Square.json", "r") as f:
+        with open("Square.json") as f:
             self.assertEqual(f.read(), "[]")
 
         Square.save_to_file([])
         self.assertTrue(os.path.exists("Square.json"))
-        with open("Square.json", "r") as f:
+        with open("Square.json") as f:
             self.assertEqual(f.read(), "[]")
             self.assertEqual(type(f.read()), str)
 
         Square.save_to_file([Square(1)])
-        with open("Square.json", "r") as f:
+        with open("Square.json") as f:
             self.assertEqual(f.read(),
             '[{"id": 1, "size": 1, "x": 0, "y": 0}]')
 
@@ -165,7 +165,7 @@ class TestSquare(unittest.TestCase):
         """Test for save to file function"""
         Square.save_to_file([])
         self.assertTrue(os.path.exists("Square.json"))
-        with open("Square.json", "r") as f:
+        with open("Square.json") as f:
             self.assertEqual(f.read(), "[]")
             self.assertEqual(type(f.read()), str)
 
