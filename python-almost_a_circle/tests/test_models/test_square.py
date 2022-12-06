@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 
 import os
-import unittest
+from unittest import TestCase
 from models.base import Base
 from models.square import Square
 from io import StringIO
 from unittest.mock import patch
 
 
-class TestSquare(unittest.TestCase):
+class TestSquare(TestCase):
     """Test class for square"""
 
     def test_instance(self):

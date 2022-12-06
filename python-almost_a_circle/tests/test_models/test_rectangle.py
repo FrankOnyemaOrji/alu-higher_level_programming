@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Test case for Rectangle class"""
 
-import unittest
+from unittest import TestCase
 from models.rectangle import Rectangle
 from models.base import Base
 from io import StringIO
@@ -9,7 +9,7 @@ from unittest.mock import patch
 import os 
 
 
-class TestRectangle(unittest.TestCase):
+class TestRectangle(TestCase):
     """Test class for rectangle"""
 
     def test_instance(self):

@@ -2,14 +2,13 @@
 """Test case for Base class"""
 
 import os
-import unittest
-
-from models.base import Base
+from unittest import TestCase
 from models.rectangle import Rectangle
+from models.base import Base
 from models.square import Square
 
 
-class TestBase(unittest.TestCase):
+class TestBase(TestCase):
     """Test class for base"""
 
     def test_id(self):
