@@ -37,8 +37,9 @@ class TestBase(TestCase):
     def test_save_to_file(self):
         """test for save to file"""
         Base._Base__nb_objects = 0
+
         Square.save_to_file(None)
-        self.assertEqual(os.path.exists("Square.json"))
+        self.assertTrue(os.path.isfile("Square.json"))
         with open("Square.json", "r") as f:
             self.assertEqual(f.read(), "[]")
 
@@ -54,7 +55,7 @@ class TestBase(TestCase):
             Base._Base__nb_objects = 0
 
         Rectangle.save_to_file(None)
-        self.assertEqual(os.path.exists("Rectangle.json"))
+        self.assertTrue(os.path.isfile("Rectangle.json"))
         with open("Rectangle.json", "r") as f:
             self.assertEqual(f.read(), "[]")
 
