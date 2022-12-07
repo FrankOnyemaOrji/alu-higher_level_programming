@@ -44,7 +44,7 @@ class TestSquare(unittest.TestCase):
             s11 = Square(1, "2")
 
         with self.assertRaises(TypeError, msg="width must be an integer"):
-            s12 = Square(1, 2, 3)
+            s12 = Square("1", 2, 3)
 
     def test_area(self):
         """Test for area function"""
@@ -81,7 +81,7 @@ class TestSquare(unittest.TestCase):
     def test_update(self):
         """Test for update function"""
         Base._Base__nb_objects = 0
-        s = Square()
+        s = Square(1)
         self.assertEqual(s.id, 1)
 
         s.update(89)
