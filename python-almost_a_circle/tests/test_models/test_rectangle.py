@@ -22,34 +22,34 @@ class TestRectangle(unittest.TestCase):
 
         self.assertEqual(r4.id, 5)
 
-        with self.assertRaisesRegex(ValueError, msg="width must be > 0"):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
             r5 = Rectangle(0, 2)
         
-        with self.assertRaisesRegex(ValueError, msg="height must be > 0"):
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
             r6 = Rectangle(1, 0)
 
-        with self.assertRaisesRegex(ValueError, msg="x must be >= 0"):
+        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
             r7 = Rectangle(-1, 2)
 
-        with self.assertRaisesRegex(ValueError, msg="y must be >= 0"):
+        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             r8 = Rectangle(1, -2)
 
-        with self.assertRaisesRegex(ValueError, msg="width must be an integer"):
+        with self.assertRaisesRegex(ValueError, "width must be an integer"):
             r9 = Rectangle(1, 2, -3)
 
-        with self.assertRaisesRegex(ValueError, msg="height must be an integer"):
+        with self.assertRaisesRegex(ValueError, "height must be an integer"):
             r10 = Rectangle(1, 2, 3, -4)
 
-        with self.assertRaisesRegex(TypeError, msg="x must be an integer"):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
             r11 = Rectangle("1", 2)
 
-        with self.assertRaisesRegex(TypeError, msg="y must be an integer"):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
             r12 = Rectangle(1, "2")
 
-        with self.assertRaisesRegex(TypeError, msg="width must be an integer"):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
             r13 = Rectangle(1, 2, "3")
 
-        with self.assertRaisesRegex(TypeError, msg="height must be an integer"):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
             r14 = Rectangle(1, 2, 3, "4")
 
     def test_area(self):
