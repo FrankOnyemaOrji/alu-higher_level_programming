@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 
 import os
-from unittest import TestCase
+import unittest
 from models.base import Base
 from models.square import Square
 from io import StringIO
 from unittest.mock import patch
 
 
-class TestSquare(TestCase):
+class TestSquare(unittest.TestCase):
     """Test class for square"""
 
     def test_instance(self):
@@ -179,3 +179,6 @@ class TestSquare(TestCase):
         file = Square.load_from_file()
         self.assertEqual(type(file), list)
         self.assertEqual(file[0].size, 2)
+
+if __name__ == '__main__':
+    unittest.main()

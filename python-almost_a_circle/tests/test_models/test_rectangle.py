@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Test case for Rectangle class"""
 
-from unittest import TestCase
+import unittest
 from models.rectangle import Rectangle
 from models.base import Base
 from io import StringIO
@@ -9,7 +9,7 @@ from unittest.mock import patch
 import os 
 
 
-class TestRectangle(TestCase):
+class TestRectangle(unittest.TestCase):
     """Test class for rectangle"""
 
     def test_instance(self):
@@ -214,3 +214,6 @@ class TestRectangle(TestCase):
         self.assertEqual(type(file), list)
         self.assertEqual(file[0].width, 1)
         self.assertEqual(file[0].height, 2)
+
+if __name__ == '__main__':
+    unittest.main()

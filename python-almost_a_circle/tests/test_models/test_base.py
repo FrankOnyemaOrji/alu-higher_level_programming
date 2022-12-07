@@ -2,13 +2,13 @@
 """Test case for Base class"""
 
 import os
-from unittest import TestCase
+import unittest
 from models.rectangle import Rectangle
 from models.base import Base
 from models.square import Square
 
 
-class TestBase(TestCase):
+class TestBase(unittest.TestCase):
     """Test class for base"""
 
     def test_id(self):
@@ -69,3 +69,6 @@ class TestBase(TestCase):
             self.assertEqual(f.read(), 
                              '[{"id": 1, "width": 2, '
                              '"height": 3, "x": 0, "y": 0}]')
+
+if __name__ == '__main__':
+    unittest.main()
