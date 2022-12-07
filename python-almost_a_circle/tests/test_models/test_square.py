@@ -22,7 +22,7 @@ class TestSquare(unittest.TestCase):
 
         self.assertEqual(s3.id, 4)
 
-        with self.assertRaisesRegex(ValueError, msg="width must be > 0"):
+        with self.assertRaisesRegex(TypeError, msg="width must be > 0"):
             s5 = Square(-1, 2)
         
         with self.assertRaises(ValueError, msg="width must be > 0"):
