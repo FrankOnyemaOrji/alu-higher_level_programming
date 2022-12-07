@@ -13,6 +13,7 @@ class TestSquare(unittest.TestCase):
 
     def test_instance(self):
         """Test for instance"""
+        Base._Base__nb_objects = 0
         s = Square(1)
         s1 = Square(1, 2)
         s2 = Square(1, 2, 3)
@@ -56,7 +57,7 @@ class TestSquare(unittest.TestCase):
         s = Square(1)
         with patch('sys.stdout', new=StringIO()) as f:
             print(s)
-            self.assertEqual(f.getvalue(), "[Square] (1) 0/0 - 1")
+            self.assertEqual(f.getvalue(), "[Square] (1) 0/0 - 1\n")
 
     def test_display(self):
         """Test for display function"""

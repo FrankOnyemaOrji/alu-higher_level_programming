@@ -63,7 +63,7 @@ class TestRectangle(unittest.TestCase):
         s1 = Rectangle(4, 2)
         with patch('sys.stdout', new=StringIO()) as f:
             print(s1)
-            self.assertEqual(f.getvalue(), "[Rectangle] (1) 0/0 - 4/2")
+            self.assertEqual(f.getvalue(), "[Rectangle] (1) 0/0 - 4/2\n")
 
     def test_display(self):
         """Test for dispaly"""
@@ -98,7 +98,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(u1.id, 1)
 
         u1.update(89)
-        self.assertEqual(u1.width, 89)
+        self.assertEqual(u1.id, 89)
 
         u1.update(89, 1)
         self.assertEqual(u1.height, 1)
