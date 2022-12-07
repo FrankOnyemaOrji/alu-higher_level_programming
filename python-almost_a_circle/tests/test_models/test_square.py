@@ -25,26 +25,26 @@ class TestSquare(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             s5 = Square(-1, 2)
         
-        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+        with self.assertRaisesRegex(ValueError, "x must be > 0"):
               s6 = Square(1, -2)
 
-        with self.assertRaisesRegex(ValueError, "width must be an integer"):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
             s7 = Square(0, 2)
 
-        with self.assertRaisesRegex(ValueError, "width must be an integer"):
+        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             s8 = Square(1, 2, -3)
 
-        with self.assertRaisesRegex(ValueError, "width must be an integer"):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
             s9 = Square(0)
 
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             s10 = Square("1")
 
-        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
             s11 = Square(1, "2")
 
-        with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            s12 = Square("1", 2, 3)
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            s12 = Square(1, 2, "3")
 
     def test_area(self):
         """Test for area function"""
