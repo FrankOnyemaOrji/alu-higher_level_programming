@@ -22,28 +22,28 @@ class TestSquare(unittest.TestCase):
 
         self.assertEqual(s3.id, 4)
 
-        with self.assertRaisesRegex(TypeError, msg="width must be > 0"):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
             s5 = Square(-1, 2)
         
-        with self.assertRaises(ValueError, msg="width must be > 0"):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
               s6 = Square(1, -2)
 
-        with self.assertRaises(ValueError, msg="width must be an integer"):
+        with self.assertRaisesRegex(ValueError, "width must be an integer"):
             s7 = Square(0, 2)
 
-        with self.assertRaises(ValueError, msg="width must be an integer"):
+        with self.assertRaisesRegex(ValueError, "width must be an integer"):
             s8 = Square(1, 2, -3)
 
-        with self.assertRaises(ValueError, msg="width must be an integer"):
+        with self.assertRaisesRegex(ValueError, "width must be an integer"):
             s9 = Square(0)
 
-        with self.assertRaises(TypeError, msg="width must be an integer"):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
             s10 = Square("1")
 
-        with self.assertRaises(TypeError, msg="width must be an integer"):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
             s11 = Square(1, "2")
 
-        with self.assertRaises(TypeError, msg="width must be an integer"):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
             s12 = Square("1", 2, 3)
 
     def test_area(self):
