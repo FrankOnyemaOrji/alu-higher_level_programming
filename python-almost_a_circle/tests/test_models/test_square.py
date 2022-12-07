@@ -21,6 +21,7 @@ class TestSquare(unittest.TestCase):
         s4 = Square(1, 2, 3, 4)
 
         self.assertEqual(s3.id, 4)
+        self.assertEqual(s4.id, 4)
 
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             s5 = Square(-1, 2)
