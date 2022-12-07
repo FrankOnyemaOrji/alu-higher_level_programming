@@ -28,10 +28,10 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
             r6 = Rectangle(1, 0)
 
-        with self.assertRaisesRegex(ValueError, "width must be >= 0"):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
             r7 = Rectangle(-1, 2)
 
-        with self.assertRaisesRegex(ValueError, "height must be >= 0"):
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
             r8 = Rectangle(1, -2)
 
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
