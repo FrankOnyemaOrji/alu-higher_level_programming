@@ -9,7 +9,7 @@ switch (user) {
 
   default:
     for (let i = 0; i < user; i++) {
-      a.push(process.argv(user[i]));
+      a.push(process.argv[i]);
     }
     a.sort((a, b) => b - a);
     console.log(a[1]);
