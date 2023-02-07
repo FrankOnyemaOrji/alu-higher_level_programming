@@ -8,7 +8,7 @@ switch (user) {
     break;
 
   default:
-    for (let i = 0; i < user; i++) {
+    for (let i = 2; i < user; i++) {
       a.push(process.argv[i]);
     }
     a.sort((a, b) => b - a);
