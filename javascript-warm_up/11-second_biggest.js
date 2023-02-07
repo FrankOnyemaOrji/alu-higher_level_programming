@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const user = process.argv.slice(2);
+const user = process.argv.length;
 const a = [];
 switch (user) {
   case 2:
