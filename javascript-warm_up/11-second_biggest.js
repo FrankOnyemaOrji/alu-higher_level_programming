@@ -8,8 +8,8 @@ switch (user) {
     break;
 
   default:
-    for (let i = 0; i < user.length; i++) {
-      a.push(parseInt(user[i]));
+    for (let i = 0; i < user; i++) {
+      a.push(process.argv(user[i]));
     }
     a.sort((a, b) => b - a);
     console.log(a[1]);
