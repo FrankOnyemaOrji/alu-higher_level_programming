@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const user = process.argv.slice[2];
+const user = process.argv.slice(2);
 const request = require('request');
 
 const url = `https://swapi-api.hbtn.io/api/films/${user[0]}`;
